@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriVision | Premium Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        /* Premium Fonts */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .header-name, .section-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .card-title, .member-name {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+        }
+        
+        p, .paragraph-text {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 400;
+        }
+        
+        /* Fixed Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.496);
+            z-index: 1000;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
+        }
+        
+        .logo span:nth-child(1) {
+            color: #000000;
+        }
+        
+        .logo span:nth-child(2) {
+            color: #e63946;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #000000;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: #e63946;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #e63946;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main content sections - REDUCED SPACING */
+        section {
+            padding: 1rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Home section */
+        #home {
+            padding-top: 6rem;
+            text-align: center;
+        }
+        
+        .hero-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.422);
+            margin-bottom: 2.5rem;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 480px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.ibb.co/hxPQ0TmS/Picsart-26-02-05-17-39-23-333.jpg') center/cover no-repeat;
+            opacity: 0.9;
+        }
+        
+        .centered-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .centered-content h2 {
+            font-size: 2.3rem;
+            margin-bottom: 1.2rem;
+            color: #000000;
+        }
+        
+        .centered-content p {
+            font-size: 1.15rem;
+            color: #000000;
+            line-height: 1.7;
+        }
+        
+        /* Symbol section with arrow lines */
+        .symbol-section {
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        
+        .symbol-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .symbol-item {
+            flex: 1;
+            min-width: 150px;
+            padding: 0 1.2rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+        
+        .symbol {
+            font-size: 2.2rem;
+            color: #e63946;
+            margin-bottom: 0.7rem;
+        }
+        
+        .symbol-title {
+            font-size: 1.05rem;
+            color: #000000;
+            font-weight: 600;
+        }
+        
+        /* Arrow lines between symbols */
+        .arrow-line {
+            position: absolute;
+            top: 25%;
+            right: -15px;
+            width: 30px;
+            height: 2px;
+            background-color: #e63946;
+            z-index: 1;
+        }
+        
+        .arrow-line::after {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid #e63946;
+        }
+        
+        /* Hide arrow lines on last item and on mobile */
+        .symbol-item:last-child .arrow-line {
+            display: none;
+        }
+        
+        /* Horizontal cards slider - REDUCED SPACING */
+        .slider-section {
+            margin: 4rem 0;
+        }
+        
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+        
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 1.8rem;
+            padding: 0.8rem 0;
+        }
+        
+        .slide-card {
+            flex: 0 0 calc(33.333% - 1.2rem);
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.456);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .slide-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.588);
+        }
+        
+        .card-img {
+            height: 170px;
+            width: 100%;
+            background-color: #6c757d;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-content {
+            padding: 1.3rem;
+        }
+        
+        .card-content h3 {
+            margin-bottom: 0.7rem;
+            color: #000000;
+            font-size: 1.3rem;
+        }
+        
+        .card-content p {
+            color: #000000;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            color: #000000;
+            cursor: pointer;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            z-index: 10;
+        }
+        
+        .slider-btn:hover {
+            background-color: #e63946;
+            color: white;
+        }
+        
+        .slider-btn.prev {
+            left: 15px;
+        }
+        
+        .slider-btn.next {
+            right: 15px;
+        }
+        
+        /* Image with overlay section - REDUCED SPACING */
+        .image-overlay-section {
+            position: relative;
+            height: 450px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 3.5rem 0;
+        }
+        
+        .overlay-image {
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+            filter: brightness(0.2);
+        }
+        
+        .overlay-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        
+        .overlay-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .overlay-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.7;
+        }
+        
+        /* Split sections - REDUCED SPACING */
+        .split-section {
+            display: flex;
+            align-items: center;
+            margin: 3.5rem 0;
+            gap: 3rem;
+        }
+        
+        .split-section.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .split-image {
+            flex: 1;
+            height: 360px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.369);
+        }
+        
+        .split-image.left-img {
+            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+        }
+        
+        .split-image.right-img {
+            background: url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+        }
+        
+        .split-content {
+            flex: 1;
+        }
+        
+        .split-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            color: #000000;
+        }
+        
+        .split-content p {
+            font-size: 1.05rem;
+            color: #000000;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        /* Team section - REDUCED SPACING */
+        .team-section {
+            text-align: center;
+            margin: 3.5rem 0;
+        }
+        
+        .team-section h2 {
+            font-size: 2.3rem;
+            margin-bottom: 2.5rem;
+            color: #000000;
+        }
+        
+        .team-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .team-member {
+            flex: 1;
+            min-width: 230px;
+            max-width: 280px;
+            background-color: #f8f9fa;
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.327);
+            transition: transform 0.3s;
+        }
+        .team-member:hover {
+            transform: translateY(-8px);
+        }
+         /* Round profile images for first three members */
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.327);
+        }
+        
+        /* Colored outlines according to theme */
+        .profile-1 {
+            border-color: #e63946; /* Red theme color */
+        }
+        
+        .profile-2 {
+            border-color: #e63946; /* Blue from gradient */
+        }
+        
+        .profile-3 {
+            border-color: #e63946;; /* Purple from gradient */
+        }
+        
+        
+        
+        .member-name {
+            font-size: 1.3rem;
+            color: #222;
+            margin-bottom: 0.7rem;
+        }
+        
+        .member-role {
+            color: #e63946;
+            font-weight: 600;
+            margin-bottom: 0.9rem;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .member-bio {
+            color: #000000;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        
+        /* Footer - REDUCED SPACING */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 230px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #ffffff;
+            margin-bottom: 0.7rem;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-section a:hover {
+            color: #e63946;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 0.9rem;
+            margin-top: 0.9rem;
+        }
+        
+        .social-icons a {
+            font-size: 1.3rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #8c8c8c;
+            color: #ffffff;
+            font-size: 0.85rem;
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background-color: #222;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .slide-card {
+                flex: 0 0 calc(50% - 0.9rem);
+            }
+            
+            .split-section {
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+            
+            .split-image {
+                width: 100%;
+                flex: none;
+                height: 320px;
+            }
+            
+            .arrow-line {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 0.8rem;
+            }
+            
+            nav ul {
+                margin-top: 0.8rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.4rem 0.9rem;
+            }
+            
+            .slide-card {
+                flex: 0 0 100%;
+            }
+            
+            .symbol-item {
+                min-width: 120px;
+                padding: 0 0.8rem;
+            }
+            
+            section {
+                padding: 3rem 1.5rem;
+            }
+            
+            #home {
+                padding-top: 7rem;
+            }
+            
+            .hero-image {
+                height: 280px;
+            }
+            
+            .centered-content h2, .overlay-content h2, .team-section h2 {
+                font-size: 1.9rem;
+            }
+            
+            .overlay-content p {
+                font-size: 1.1rem;
+            }
+            
+            .image-overlay-section {
+                height: 380px;
+            }
+            
+            .arrow-line {
+                display: none;
+            }
+            
+            .symbol-container {
+                justify-content: space-around;
+            }
+            .symbol-title {
+                font-size: 0.85rem;
+            }
+            
+            .profile-img {
+                width: 85px;
+                height: 85px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .symbol-item {
+                min-width: 45%;
+                margin: 0.8rem 0;
+            }
+            
+            .hero-image {
+                height: 220px;
+            }
+            
+            .image-overlay-section {
+                height: 320px;
+            }
+            
+            .overlay-content {
+                padding: 1.5rem;
+            }
+            
+            .overlay-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .overlay-content p {
+                font-size: 1rem;
+            }
+            .team-member {
+                min-width: 100%;
+            }
+            
+            .symbol {
+                font-size: 1.8rem;
+                height: 40px;
+            }
+            
+            .profile-img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header>
+        <div class="logo">
+            <span>Tri</span><span>Vision</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <div class="hero-card">
+                <div class="hero-image"></div>
+            </div>
+            
+            <div class="centered-content">
+                <h2>Professional Summary</h2>
+                <p>Trivision Studios is a creative and digital agency focused on helping schools present their values, achievements, and culture through high-quality visuals and consistent digital presence.They also emphasize long-term partnerships rather than one-time projects, offering ongoing content support, campaign planning, and brand consistency checks to ensure schools evolve without losing their identity.turning everyday academic environments into inspiring stories that connect emotionally with audiences while maintaining professionalism, clarity, and credibility across every platform.</p>
+            </div>
+            
+            <!-- Symbol Section with Arrow Lines -->
+             <div class="symbol-section">
+                <h1>Our Service Philosophy</h1>
+                <div class="symbol-container">
+                    <div class="symbol-item">
+                        <div class="symbol"><i class="fas fa-user-friends"></i></div>
+                        <div class="symbol-title">Client-focused service</div>
+                        <div class="arrow-line"></div>
+                    </div>
+                    <div class="symbol-item">
+                        <div class="symbol"><i class="fas fa-project-diagram"></i></div>
+                        <div class="symbol-title">Clear project planning</div>
+                        <div class="arrow-line"></div>
+                    </div>
+                    <div class="symbol-item">
+                        <div class="symbol"><i class="fas fa-clock"></i></div>
+                        <div class="symbol-title">On-time delivery</div>
+                        <div class="arrow-line"></div>
+                    </div>
+                    <div class="symbol-item">
+                        <div class="symbol"><i class="fas fa-money-bill-wave"></i></div>
+                        <div class="symbol-title">Transparent pricing</div>
+                        <div class="arrow-line"></div>
+                    </div>
+                    <div class="symbol-item">
+                        <div class="symbol"><i class="fas fa-users"></i></div>
+                        <div class="symbol-title">One dedicated team</div>
+                        <div class="arrow-line"></div>
+                    </div>
+                    <div class="symbol-item">
+                        <div class="symbol"><i class="fas fa-handshake"></i></div>
+                        <div class="symbol-title">Regular coordination </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horizontal Sliding Cards -->
+        <section id="services" class="slider-section">
+            <div class="centered-content">
+                <h2>Our Premium Services</h2>
+                <p>We offer a comprehensive range of services designed to meet your business needs and exceed expectations.</p>
+            </div>
+            
+            <div class="slider-container">
+                <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider">
+                    <!-- Cards will be generated by JavaScript -->
+                </div>
+                <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Image with Overlay Section -->
+        <section>
+            <div class="image-overlay-section">
+                <div class="overlay-image"></div>
+                <div class="overlay-content">
+                    <h2>Why Visions Matters visibility</h2>
+                    <p>Parents and students evaluate schools through online presence before admissions</p>
+                    <p>Events, results, and discipline deserve professional representation</p>
+                    <p>Consistent content builds trust and strengthens the school's brand</p>
+                    <p>Strong branding builds customer trust</p>
+                    <p>Professional designs improve business image</p>
+                    <p>Digital presence increases visibility</p>
+                    <p>Quality content attracts more clients</p>
+                    <p>Consistency strengthens brand value.</p>
+            </div>
+        </section>
+
+        <!-- Split Section 1 -->
+        <section class="split-section">
+            <div class="split-image left-img"></div>
+            <div class="split-content">
+                <h2>Our Commitment</h2>
+                <p>Content aligned with school values and discipline</p>
+                <p>Child-safe, institution-appropriate visuals</p>
+                <p>Creative and original designs</p>
+                <p>Professional quality standards</p>
+                <p>Affordable solutions</p>
+                <p>Timely project completion</p>
+                <p>Customer satisfaction</p>
+            </div>
+        </section>
+
+        <!-- Split Section 2 -->
+        <section class="split-section reverse">
+            <div class="split-image right-img"></div>
+            <div class="split-content">
+                <h2>Why To Choose TriVision</h2>
+                <p>Experienced creative team</p>
+                <p>One-stop digital solution</p>
+                <p>Personalized service</p>
+                <p>Reliable support</p>
+                <p>Result-oriented approach</p>
+
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <h2>Meet Our Leadership Team</h2>
+            
+            <div class="team-row">
+                <div class="team-member">
+                    <img src="https://i.ibb.co/SXmX612D/Picsart-26-02-05-21-05-58-959.png" 
+                         alt="Manoj Surya" 
+                         class="profile-img profile-1">
+                    <div class="member-name">Manoj Surya</div>
+                    <div class="member-role">Visionary leader</div>
+                    <p class="member-bio">"A person with knowledge to aquaire"</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://i.ibb.co/5XDr6q0t/Picsart-26-02-05-21-03-54-686.png" 
+                         alt="Kumar Swamy" 
+                         class="profile-img profile-2">
+                    <div class="member-name">Kumar Swamy</div>
+                    <div class="member-role">Expert Head</div>
+                    <p class="member-bio">"A person Thinking big to make it big."</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://i.ibb.co/6ccPbyQC/Picsart-26-02-05-21-04-46-852.png" 
+                         alt="Srinivas" 
+                         class="profile-img profile-3">
+                    <div class="member-name">Srinivas</div>
+                    <div class="member-role">Creative Expert</div>
+                    <p class="member-bio">"Arting up the enlightment of Visions"</p>
+                </div>
+            </div>
+            
+            <div class="team-row">
+                <div class="team-member">
+                    <div class="member-name">Divya</div>
+                    <div class="member-role">Analysing Partner</div>
+                    <p class="member-bio">"thinker with expertise in market and business analysis."</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-name">Kavya</div>
+                    <div class="member-role">Stratergy Maker</div>
+                    <p class="member-bio">"A developer passionate about building robust and efficient systems."</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-name">Anil Achar</div>
+                    <div class="member-role">Designing Director</div>
+                    <p class="member-bio">"A project executer for good experience and user friendly."</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-name">Vignesh S.beeda</div>
+                    <div class="member-role">Co-Designing Partner</div>
+                    <p class="member-bio">"Detail-oriented professional ensuring seamless project execution and delivery."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <a href="https://www.instagram.com/tri_vision.studios?utm_source=qr&igsh=MWVuaDdwbTZhZDB0Zw==" target="_blank"><i class="fab fa-instagram"></i> @trivision</a>
+                    <a href="https://www.facebook.com/share/1EdMLnMUNA/" target="_blank"><i class="fab fa-facebook"></i> /trivision</a>
+                    <a href="https://linkedin.com/company/trivision" target="_blank"><i class="fab fa-linkedin"></i> TriVision</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <a href="trivisionstudios.21@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i>trivisionstudios.21@gmail.com</a>
+                    <p><i class="fas fa-phone"></i> +91 9880778593</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Banglore 91</p>
+                    <p></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 TriVision. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Data for slider cards
+         const cardData = [
+            {title: "Event Photography & Videography",
+                desc: "Professional coverage of school events, ceremonies, sports days, and cultural programs with high-quality photography and videography services.",
+                bgColor: "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)",
+                bgImage: "url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"
+            },
+            {
+                title: "Daily / Weekly Activity Coverage",
+                desc: "Regular documentation of classroom activities, special projects, field trips, and extracurricular programs to showcase student life.",
+                bgColor: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)",
+                bgImage: "url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"
+            },
+            {
+                title: "Posters & Creative Designs",
+                desc: "Eye-catching designs for events, results, announcements, competitions, and school publications that communicate effectively.",
+                bgColor: "linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)",
+                bgImage: "url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"
+            },
+            {
+                title: "Short Videos & Reels for Engagement",
+                desc: "Creative short-form video content for social media that highlights school achievements, student talents, and campus life.",
+                bgColor: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
+                bgImage: "url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80')"
+            },
+            {
+                title: "Instagram Page Creation & Management",
+                desc: "End-to-end management of school social media presence including content creation, posting schedule, and community engagement.",
+                bgColor: "linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)",
+                bgImage: "url('https://images.unsplash.com/photo-1611262588024-d12430b98920?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80')"
+            },
+            {
+                title: "Logo Design & Branding",
+                desc: "Development of cohesive visual identities for schools, departments, clubs, and events with professional logo design and branding.",
+                bgColor: "linear-gradient(135deg, #a6c0fe 0%, #f68084 100%)",
+                bgImage: "url('https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1522&q=80')"
+            },
+            {
+                title: "Graphic Design Services",
+                desc: "Professional design of posters, banners, flyers, brochures, and digital assets for all school communication needs.",
+                bgColor: "linear-gradient(135deg, #fccb90 0%, #d57eeb 100%)",
+                bgImage: "url('https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"
+            },
+            {
+                title: "Social Media Creatives & Management",
+                desc: "Strategic social media management with regular content creation, community interaction, and performance analysis.",
+                bgColor: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)",
+                bgImage: "url('https://images.unsplash.com/photo-1611944212129-29977ae1398c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80')"
+            },
+            {
+                title: "Website Design",
+                desc: "Modern, responsive website design and development for schools with content management systems and mobile optimization.",
+                bgColor: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
+                bgImage: "url('https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1536&q=80')"
+            },
+            {
+                title: "Digital Marketing Support",
+                desc: "Comprehensive digital marketing strategies including SEO, email campaigns, online advertising, and analytics for school promotion.",
+                bgColor: "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)",
+                bgImage: "url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"
+            }
+        ];
+
+        // Initialize slider
+        const slider = document.querySelector('.slider');
+        const prevBtn = document.querySelector('.slider-btn.prev');
+        const nextBtn = document.querySelector('.slider-btn.next');
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        // Create and add cards to slider
+        cardData.forEach((card, index) => {
+            const cardElement = document.createElement('div');
+            cardElement.className = 'slide-card';
+            cardElement.innerHTML = `
+                <div class="card-img" style="background: ${card.bgColor}, ${card.bgImage}; background-blend-mode: overlay;"></div>
+                <div class="card-content">
+                    <h3>${card.title}</h3>
+                    <p>${card.desc}</p>
+                </div>
+            `;
+            slider.appendChild(cardElement);
+        });
+        
+        // Slider functionality
+        let currentPosition = 0;
+        let cardWidth = 0;
+        const totalCards = cardData.length;
+        let visibleCards = 0;
+        
+        function calculateSliderValues() {
+            const card = document.querySelector('.slide-card');
+            if (card) {
+                cardWidth = card.offsetWidth + 24; // width + gap
+                const containerWidth = document.querySelector('.slider-container').offsetWidth;
+                visibleCards = Math.floor(containerWidth / cardWidth);
+            }
+        }
+        
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            calculateSliderValues();
+            if (currentPosition < totalCards - visibleCards) {
+                currentPosition++;
+                updateSlider();
+            }
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            if (currentPosition > 0) {
+                currentPosition--;
+                updateSlider();
+            }
+        });
+        
+        // Scroll to top functionality
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Initialize slider values
+        window.addEventListener('load', calculateSliderValues);
+        window.addEventListener('resize', calculateSliderValues);
+        
+        // Add click handlers for arrow lines in symbol section
+        document.querySelectorAll('.arrow-line').forEach(arrow => {
+            arrow.addEventListener('click', function() {
+                const nextSymbol = this.parentElement.nextElementSibling;
+                if (nextSymbol) {
+                    nextSymbol.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                        inline: 'center'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
